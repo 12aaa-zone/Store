@@ -8,7 +8,7 @@
        https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- 配置整合mybatis -->
-    <!-- 1.关联数据库文件 -->
+    <!-- 1.关联数据库配置 -->
     <context:property-placeholder location="classpath:database.properties"/>
 
     <!-- 2.数据库连接池 -->
@@ -17,7 +17,7 @@
         c3p0 自动化操作（自动地加载配置文件 并且设置到对象里面）
     -->
 
-    <!-- 这里我们选择c3p0连接池 -->
+    <!-- 这里选择c3p0连接池 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 
         <!-- 配置连接池属性 -->

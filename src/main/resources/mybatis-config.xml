@@ -3,6 +3,8 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+    <!-- 别名映射，将该包下所有完整类名整天一个别名为精简类名
+         例如 ：com.as.Pojo.User， 增添别名 User-->
     <typeAliases>
         <package name="com.as.Pojo"/>
     </typeAliases>
@@ -10,4 +12,5 @@
     <mappers>
         <mapper resource="com/as/Mapper/BookMapper.xml"/>
     </mappers>
+
 </configuration>
