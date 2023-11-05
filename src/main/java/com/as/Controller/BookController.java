@@ -31,4 +31,28 @@ public class BookController {
         model.addAttribute("list",list);
         return "allBook";
     }
+
+    @RequestMapping("addBook")
+    public String addPaper(Books books){
+        System.out.println(books);
+        bookService.addBook(books);
+        return "redirect:/book/allBook";
+    }
+
+    @RequestMapping("toUpdateBook")
+    public String toUpdateBook(Model model, int id){
+        Books books = bookService.queryBookById(id);
+        System.out.println(books);
+        model.addAttribute("book",books);
+        return "updateBook";
+    }
+
+    @RequestMapping("/updateBook")
+    public String updateBook(Model model, Books book) {
+        System.out.println(book);
+        bookService.updateBook(book);
+        Books books = bookService.queryBookById(book.getBookID());
+        model.addAttribute("books", books);
+        return "redirect:/book/allBook";
+    }
 }
